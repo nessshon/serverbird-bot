@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+
+  telegram-bot:
+    build:
+      context: .
+    container_name: serverbird-bot
+    command: sh -c "cd /usr/src/telegram-bot && python main.py"
+    restart: always
+    volumes:
+      - .:/usr/src/telegram-bot
